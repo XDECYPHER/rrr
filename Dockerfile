@@ -27,7 +27,7 @@ RUN python -m pip install --upgrade pip && \
 # own step further down instead.
 RUN sed -i '/flash[_-]attn/Id' requirements.txt
 
-RUN python -m pip install -r requirements.txt && \
+RUN python -m pip install --ignore-installed blinker -r requirements.txt && \
     python -m pip install numpy==1.26.4
 
 # spconv — pick the wheel matching your CUDA major version (cu124 here to match the base image)
